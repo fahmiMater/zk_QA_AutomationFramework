@@ -1,0 +1,3 @@
+aid;req_ids;operation;level;spec_file;test_title;testsuite_name;campaign_id;status
+20068;11253;عرض قائمة طلبات سندات القبض;API;apps/vouchers/tests/requests-list-api.spec.ts;TC-20068 لا تمتلك صلاحية عرض طلبات سندات القبض;TC_20068;;
+20074;11254;عرض قائمة طلبات سندات القبض;UI;apps/vouchers/tests/requests-list-ui.spec.ts;TC-20074 عرض مؤشر التحميل أثناء الاسترجاع;TC_20074;;

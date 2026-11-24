@@ -15,6 +15,9 @@ description: Generates a XxxPage class extending BasePage using ComponentFactory
 3. Raw component APIs: read the actual `framework/components/<component>/<Xxx>Component.ts` file to confirm available methods (e.g. `TextBoxComponent` → `fill/clear/getText/assert`; `ButtonComponent` → `click/getText/assert`; `GridComponent` → `getRowCount/row/sort/filter/paginator/getColumnIndex`).
 4. Advanced selectors: `framework/core/automation/Automation.ts` — `byId, byRole, byAttribute, byAction, byColumn, byField, byGrid, byDialog, byTab`.
 
+## Inventory handoff
+When a `<feature>.ui-elements.csv` is supplied, read `.agents/skills/extract-ui-elements/resources/inventory-contract.md`. Map verified rows to existing framework APIs using `parent_key`, state and scope. Treat static IDs as candidates, not proof; report missing/ambiguous targets without generating guessed selectors. When a row is `locator_status=fallback`, implement its declared strategy (highest available: role+accessible-name, label, name-attr, html-id, visible-text, scoped-css — never positional XPath or dynamic classes), do not block generation, and mark affected Page Object methods so tests carry the `@fallback-locator` tag with the debt tracked in the register.
+
 ## Steps
 1. **Extract automation IDs.** From the provided screen/HTML, list every interactive element with its `data-automation-id`. If the screen lacks IDs, DO NOT invent selectors from visible text; produce a required-IDs table (proposed `kebab-case` IDs: `<context>-<element>[-btn]`) and tell the user (in Arabic) the UI team must add them first.
 2. **Create the file** at `apps/<app>/pages/<Xxx>Page.ts`:
@@ -37,5 +40,5 @@ description: Generates a XxxPage class extending BasePage using ComponentFactory
 4. **Verify:** `npm run typecheck` must pass before delivering.
 
 ## Failure handling
-- If an element type has no matching ComponentFactory method, say so in Arabic, propose either a `create-component` skill run or an `Automation.byAttribute(...)` fallback, and wait for the user's choice.
+- If an element type has no matching ComponentFactory method, say so in Arabic, propose either a `create-component` skill run or an `Automation.byAttribute(...)` fallback, and wait for the user's choice. This applies to the component type only: a missing `data-automation-id` on an existing component type is handled by the fallback hierarchy, not by waiting.
 - If a screen region is ambiguous (e.g. nested grids), ask one focused question in Arabic rather than guessing.

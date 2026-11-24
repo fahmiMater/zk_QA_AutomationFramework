@@ -1,0 +1,4 @@
+element_key,screen,locator_strategy,stability_risk,fallback_reason,owner,remediation_ticket,added_date,review_by
+h,demo,role+accessible-name,low,no-automation-id,ui-team,ZK-1041,2026-11-24,qa-lead
+r,demo,name-attr,medium,no-automation-id,ui-team,ZK-1042,2026-11-24,qa-lead
+c,demo,scoped-css,high,"no-automation-id,no-unique-name",ui-team,ZK-1043,2026-11-24,qa-lead

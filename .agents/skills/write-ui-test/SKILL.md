@@ -15,6 +15,9 @@ import { test, expect } from '../../framework/core/fixtures/test';
 ```
 This gives access to the custom `network` fixture (`framework/core/network/NetworkManager.ts`).
 
+## Inventory handoff
+Consume `<feature>.ui-elements.csv` using `.agents/skills/extract-ui-elements/resources/inventory-contract.md`. Use state, activation and hierarchy for targeting via Page Objects. Derive assertions from acceptance criteria, not observed labels or states alone. Report unverified or blocked targets separately. For `fallback` rows, generate the test using the declared lower-priority strategy and tag it `@fallback-locator` (Playwright: `test(title, { tag: '@fallback-locator' }, ...)`) — the test runs and reports normally, never disabled or deferred. Report no test as blocked solely because an automation id is missing; missing-id rows without any usable strategy go to the debt register with the acceptance criterion still exercised as far as the evidence allows.
+
 ## Steps
 1. **Page Object first.** If none exists for the target screen, generate one with the `generate-page-object` skill. Never call `page.locator()` inside a spec.
 2. **Write the spec** in `apps/<app>/tests/<feature>.spec.ts`:

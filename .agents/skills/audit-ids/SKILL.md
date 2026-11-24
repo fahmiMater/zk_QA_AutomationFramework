@@ -14,6 +14,9 @@ description: Audits screens (HTML files, live pages, or page objects) for data-a
 - Framework resolution: `framework/core/locators/AutomationLocator.ts` maps IDs to `[data-automation-id="..."]`.
 - Forbidden: selecting by visible text, CSS classes, or XPath.
 
+## Inventory input
+Accept `<feature>.ui-elements.csv` using `.agents/skills/extract-ui-elements/resources/inventory-contract.md`. Distinguish confirmed missing/ambiguous IDs from coverage gaps and screenshot-only evidence. Evaluate duplicates within their declared screen, state and scope; do not conflate repeated scoped controls with collisions. A missing ID is reported as locator debt with a recommended fallback strategy — never as a reason to defer, disable or exclude the affected test.
+
 ## Steps
 1. **Collect inputs:** from provided HTML/screenshots/or a running page (`page.content()`), list all interactive elements (`button, input, select, a[href], [role=...], table cells`).
 2. **Classify each element:**

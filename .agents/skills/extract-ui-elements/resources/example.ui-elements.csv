@@ -1,0 +1,13 @@
+schema_version,record_kind,screen,state,element_key,parent_key,component,element_type,name,accessible_name,tag,role,data-automation-id,data-testid,data-automation-role,data-automation-grid,data-automation-column,data-automation-field,data-automation-action,data-automation-tab,data-automation-dialog,data-automation-filter,data-automation-row-id,html_id,input_type,label,placeholder,required,disabled,readonly,visible,checked,selected,expanded,aria_controls,min,max,step,pattern,maxlength,date_format,date_format_source,locale,scope,frame_path,shadow_host,activation,match_count,locator_status,evidence,escaped_columns,notes,locator_strategy,fallback_reason,stability_risk,owner,remediation_ticket,review_by
+1,element,demo,default,g,,GridComponent,grid,جدول العناصر,,,,items-grid,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,unverified,static-dom,,,,,,,,
+1,element,demo,default,h,g,,grid-header,الإجراءات,,,,,,,,actions,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,fallback,static-dom,,,role+accessible-name,no-automation-id,low,ui-team,ZK-1041,qa-lead
+1,element,demo,default,r,g,,grid-row,,,,,,,,,,,,,,,demo-row,,,,,,,,,,,,,,,,,,,,ar,,,,,,fallback,static-dom,,,name-attr,no-automation-id,medium,ui-team,ZK-1042,qa-lead
+1,element,demo,default,c,r,,grid-cell,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,fallback,static-dom,,,scoped-css,"no-automation-id,no-unique-name",high,ui-team,ZK-1043,qa-lead
+1,element,demo,default,b,c,,row-action,تفاصيل,,button,,item-details,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,items-grid / demo-row / actions,,,,,unverified,static-dom,,,,,,,,
+1,element,demo,default,d,,DatePickerComponent,date-picker,تاريخ البدء,,,,start-date,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,unverified,static-dom,,,,,,,,
+1,element,demo,default,i,d,,date-input,تاريخ البدء,,input,,start-date-input,,,,,,,,,,,,,,YYYY-MM-DD,true,,,,,,,,,,,,,YYYY-MM-DD,placeholder,ar,,,,,,unverified,static-dom,,,,,,,,
+1,element,demo,default,t,d,,date-trigger,فتح التقويم,,button,,start-date-trigger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,unverified,static-dom,,,,,,,,
+1,element,demo,calendar-open,p,d,,date-overlay,التقويم,,,,start-date-panel,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,Open date trigger,,unverified,static-dom,,,,,,,,
+1,element,demo,calendar-open,n,p,,calendar-next-month,الشهر التالي,,button,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,missing-id,static-dom,,,,,,,,
+1,element,demo,calendar-open,dy,p,,calendar-day,15,,,,,,,,,,,,,,,,,,,,true,,,,,,,,,,,,,,ar,,,,,,missing-id,static-dom,,,,,,,,
+1,coverage_gap,demo,range-selection,gap,d,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ar,,,,,,not-applicable,unobserved,,لا توجد لقطة لهذه الحالة,,,,,,

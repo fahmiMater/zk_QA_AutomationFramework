@@ -20,6 +20,9 @@ A clean Playwright + TypeScript UI & API test-automation framework, domain-neutr
 | `env-config` | .env/environment wiring via EnvironmentManager; secrets only in .env |
 | `mr-workflow` | Branches, Conventional Commits, MR prep, verification gate |
 | `extend-fixtures` | Add custom fixtures following the NetworkManager pattern in test.ts |
+| `extract-ui-elements` | Inventory nested UI controls and test metadata as CSV for downstream skills |
+| `tuleap-sync` | Map tests to Tuleap TTM (testsuite=TC_<aid>) and push JUnit results to campaigns |
+| `design-test-cases` | ISTQB test design from Tuleap requirements matrix, API/UI classification, tagged specs |
 | `audit-ids` | Audit data-automation-id coverage; Arabic HTML findings report |
 
 ## Non-negotiable rules (enforced by every skill)
