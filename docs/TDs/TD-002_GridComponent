@@ -1,0 +1,15 @@
+TD-002
+
+GridComponent currently counts
+PrimeNG empty-state rows as data rows.
+
+Future implementation must distinguish:
+
+- Data Rows
+- Empty State Rows
+
+Expected Result:
+
+Empty grids should return:
+
+getRowCount() = 0

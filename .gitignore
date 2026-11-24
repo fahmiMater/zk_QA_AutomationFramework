@@ -1,0 +1,48 @@
+# === Core build & runtime ===
+node_modules/
+playwright-report/
+test-results/
+blob-report/
+dist/
+build/
+
+# === Sensitive environment files (use .env.example as the template) ===
+.env
+.env.*
+!.env.example
+
+# === Project management (not for version control) ===
+project/tracking/
+project/kanban/
+project/dashboards/
+project/improvements/
+project/management/
+project/templates/
+
+# === IDE & tools ===
+.obsidian/
+.vscode/
+playwright/.auth/
+
+# === Local archive of scratch / analysis files (kept on disk only) ===
+/archive/
+
+# === Generated scratch data (outputs of scripts/*.js - regenerate from Excel) ===
+/all docs an code.md
+/extracted_elements.md
+/components and core
+/agents reviews/
+/api_cases.json
+/api_results.json
+/blocked_cases.json
+/ui_cases.json
+/ui_assertions.json
+/db_assertions.json
+/test_cases.json
+/sql.json
+/out.json
+/handoff.json
+/account form.json
+/dimension.json
+/listobject.json
+/config.json

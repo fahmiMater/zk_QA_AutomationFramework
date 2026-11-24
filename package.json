@@ -1,0 +1,22 @@
+{
+  "name": "zk-qa-automation-framework",
+  "version": "1.0.0",
+  "description": "ZK QA Automation Framework - Playwright + TypeScript test automation framework (UI & API)",
+  "scripts": {
+    "test": "playwright test",
+    "test:framework": "playwright test --project=framework",
+    "typecheck": "tsc --noEmit",
+    "list": "playwright test --list"
+  },
+  "keywords": ["playwright", "typescript", "test-automation", "qa"],
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.0.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  }
+}

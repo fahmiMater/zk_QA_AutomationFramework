@@ -1,0 +1,159 @@
+# Technical Debt Register
+
+> This document tracks known technical debt within the ERP Automation Platform.
+>
+> Technical debt items are intentionally deferred improvements that do not currently block development but should be addressed in future iterations.
+
+---
+
+# TD-003
+
+## Title
+
+Move Component-Specific Automation Helpers out of BaseComponent
+
+---
+
+## Status
+
+Open
+
+---
+
+## Priority
+
+Medium
+
+---
+
+## Category
+
+Architecture
+
+---
+
+## Description
+
+`BaseComponent` currently provides several helper methods that are specific to particular UI components, including:
+
+* `byGrid()`
+* `byDialog()`
+* `byTab()`
+* `byColumn()`
+* `byField()`
+* `byAction()`
+
+While these methods improve developer convenience, they introduce knowledge of specific UI concepts into the framework's base abstraction.
+
+According to the **Single Responsibility Principle (SRP)**, `BaseComponent` should expose only generic automation capabilities that are applicable to all components.
+
+---
+
+## Current Design
+
+```text
+BaseComponent
+
+├── find()
+├── byId()
+├── byRole()
+├── byAttribute()
+├── byGrid()      ❌
+├── byDialog()    ❌
+├── byTab()       ❌
+├── byColumn()    ❌
+├── byField()     ❌
+└── byAction()    ❌
+```
+
+---
+
+## Proposed Design
+
+`BaseComponent` should expose only generic helper methods.
+
+```text
+BaseComponent
+
+├── find()
+├── byId()
+├── byRole()
+└── byAttribute()
+```
+
+Component-specific helper methods should be moved into their corresponding components.
+
+Example:
+
+```text
+GridComponent
+
+├── byGrid()
+└── byColumn()
+```
+
+```text
+DialogComponent
+
+└── byDialog()
+```
+
+```text
+TabsComponent
+
+└── byTab()
+```
+
+---
+
+## Reason for Deferring
+
+The current implementation is:
+
+* Stable
+* Fully functional
+* Easy to understand
+* Does not negatively impact the framework
+
+Refactoring at the current stage would increase development effort without providing immediate business value.
+
+The refactoring should be performed when the affected components are upgraded (Grid V2, Dialog V2, Tabs V2).
+
+---
+
+## Target Phase
+
+Phase 2
+
+---
+
+## Target Sprint
+
+Component Refactoring Sprint
+
+---
+
+## Impact
+
+* Architecture Improvement
+* Better Separation of Concerns
+* Better Single Responsibility
+* No Functional Change
+* No Public API Breaking Change
+
+---
+
+## Related Documents
+
+* ADR-010 — Playwright Is An Implementation Detail
+* DESIGN_PRINCIPLES.md
+* CODING_STANDARDS.md
+* RFC-000 — Public SDK Architecture
+
+---
+
+## Decision
+
+Deferred.
+
+The current implementation will remain unchanged until the component refactoring phase.
