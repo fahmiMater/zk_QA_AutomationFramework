@@ -32,7 +32,8 @@ export class ApiClient extends BaseApiService {
   /**
    * Authenticates and caches the token for a specific role.
    */
-  public async login(username: string, role: string = 'ADMIN', password: string  // pass real credentials from environment variables): Promise<string> {
+  // password must be passed from environment variables - never hardcode
+  public async login(username: string, role: string = 'ADMIN', password: string): Promise<string> {
     await this.init();
 
     const cachedToken = this.tokenManager.getToken(role);

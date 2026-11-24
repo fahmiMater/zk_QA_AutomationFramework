@@ -31,7 +31,7 @@ export abstract class BaseApiService {
 
   constructor(
     request: APIRequestContext,
-    baseUrl: string = 'http://localhost:3000/api/v1'  // TODO: override per environment,
+    baseUrl: string = 'http://localhost:3000/api/v1',  // override per environment via constructor arg,
     defaultStrictMode: boolean = true
   ) {
     this.request = request;
